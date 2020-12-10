@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import ProductItem from '../components/ProductItem'
 
 export default function ProductListPage() {
   const [imageList, setImageList] = useState(null)
@@ -17,8 +18,7 @@ export default function ProductListPage() {
       {imageList && Object.entries(imageList).map(imageItem => {
         const key = imageItem[0]
         const value = imageItem[1]
-        console.log(value)
-        return <p>Image Item</p>
+        return <ProductItem product={value}/>
       })}
     </div>
   )
