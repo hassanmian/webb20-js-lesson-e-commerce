@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function ProductItem({product}) {
   return (
-    <div className="col-md-4">
+    <div className="col-md-4 shadow p-3">
       <img 
         className="img-fluid" 
         alt={product.images[0].alt} 
@@ -11,7 +11,12 @@ export default function ProductItem({product}) {
       />
       <h3>{product.name}</h3>
       {product.price} SEK
-      <Link to={`/products/${product.id}`}>Go to product</Link>
+      <Link 
+        className="btn btn-secondary btn-block" 
+        to={`/products/${product.id}`}
+      >
+        Go to product
+      </Link>
     </div>
   )
 }
